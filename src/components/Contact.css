@@ -1,0 +1,208 @@
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+@media (max-width: 860px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact__panel {
+  background: var(--navy-deep);
+  color: var(--white);
+  padding: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__title {
+  margin-top: 14px;
+  color: var(--white);
+  font-size: clamp(24px, 3vw, 30px);
+}
+
+.contact__details {
+  margin: 28px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact__row:first-child {
+  border-top: none;
+}
+
+.contact__row dt {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--steel-light);
+  flex-shrink: 0;
+}
+
+.contact__row dd {
+  margin: 0;
+  text-align: right;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.contact__row--address dd {
+  max-width: 260px;
+  line-height: 1.7;
+}
+
+.contact__actions {
+  margin-top: auto;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.contact__actions .btn-outline--dark {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.contact__actions .btn-outline--dark:hover {
+  background: var(--white);
+  color: var(--navy-deep);
+}
+
+
+/* =========================================
+   GOOGLE MAP
+   ========================================= */
+
+.contact__map {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 340px;
+  position: relative;
+  background: var(--bg);
+}
+
+.contact__map-inner {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 0;
+}
+
+/* Google Maps iframe */
+.contact__map-inner iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  border: 0;
+  display: block;
+}
+
+
+/* =========================================
+   OLD MAP PLACEHOLDER
+   These styles are kept only in case
+   the placeholder is used somewhere else.
+   ========================================= */
+
+.contact__map-pin {
+  width: 44px;
+  height: 44px;
+  color: var(--accent);
+}
+
+.contact__map-pin svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact__map-text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--steel);
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.contact__map-sub {
+  font-size: 13px;
+  color: var(--steel-light);
+  max-width: 260px;
+}
+
+
+/* =========================================
+   MOBILE MAP
+   ========================================= */
+
+@media (max-width: 860px) {
+  .contact__map {
+    min-height: 400px;
+  }
+
+  .contact__map-inner {
+    min-height: 400px;
+  }
+
+  .contact__map-inner iframe {
+    min-height: 400px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+  .contact__panel {
+    padding: 28px 22px;
+  }
+
+  .contact__row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .contact__row dd {
+    text-align: left;
+  }
+
+  .contact__row--address dd {
+    max-width: 100%;
+  }
+
+  .contact__actions {
+    flex-direction: column;
+  }
+
+  .contact__actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact__map,
+  .contact__map-inner,
+  .contact__map-inner iframe {
+    min-height: 350px;
+  }
+}
